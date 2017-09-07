@@ -1,4 +1,11 @@
 <mvc:View controllerName="ui5_wt_confirm.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-	<Button text="{i18n>showHelloButtonText}" press="onShowHello"/>
-	<Input value="{/recipient/name}" description="Hello {/recipient/name}" valueLiveUpdate="true" width="60%"/>
+	<App class="WT_CONF">
+		<pages>
+			<Page title="{i18n>homePageTitle}">
+				<content>
+					<mvc:XMLView viewName="ui5_wt_confirm.view.Login"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>

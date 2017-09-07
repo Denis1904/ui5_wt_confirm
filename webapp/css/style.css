@@ -1,1 +1,12 @@
 /* Enter your custom styles here */
+html[dir="ltr"] .WT_CONF .myCustomButton.sapMBtn {
+ 	margin-right: 0.125rem
+}
+
+html[dir="rtl"] .WT_CONF .myCustomButton.sapMBtn {
+ 	margin-left: 0.125rem
+}
+
+.WT_CONF .myCustomText {
+	font-weight: bold;
+}
