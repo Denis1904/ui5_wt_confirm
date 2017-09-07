@@ -1,10 +1,4 @@
-<mvc:View controllerName="ui5_wt_confirm.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m">
-	<App>
-		<pages>
-			<Page title="{i18n>title}">
-				<content></content>
-			</Page>
-		</pages>
-	</App>
+<mvc:View controllerName="ui5_wt_confirm.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Button text="{i18n>showHelloButtonText}" press="onShowHello"/>
+	<Input value="{/recipient/name}" description="Hello {/recipient/name}" valueLiveUpdate="true" width="60%"/>
 </mvc:View>
