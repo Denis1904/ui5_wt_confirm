@@ -2,8 +2,10 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
 	"sap/m/Dialog",
-	"sap/m/Button"
-], function(Controller, MessageToast, Dialog, Button) {
+	"sap/m/Button",
+	'sap/m/List',
+	'sap/m/StandardListItem'
+], function(Controller, MessageToast, Dialog, Button, List, StandardListItem) {
 	"use strict";
 
 	return Controller.extend("ui5_wt_confirm.controller.Login", {
@@ -19,23 +21,31 @@ sap.ui.define([
 		},
 
 		onLogin: function() {
-			if (!this.pressDialog) {
-				this.pressDialog = new Dialog({
-					title: 'Available Products',
-					//content: 
-					beginButton: new Button({
-						text: 'Close',
-						press: function() {
-							this.pressDialog.close();
-						}.bind(this)
-					})
-				});
+			var dialog = new Dialog({
+				title: 'Confirm',
+				type: 'Message',
+				content: new Text({
+					text: 'Are you sure you want to submit your shopping cart?'
+				}),
+				beginButton: new Button({
+					text: 'Submit',
+					press: function() {
+						MessageToast.show('Submit pressed!');
+						dialog.close();
+					}
+				}),
+				endButton: new Button({
+					text: 'Cancel',
+					press: function() {
+						dialog.close();
+					}
+				}),
+				afterClose: function() {
+					dialog.destroy();
+				}
+			});
 
-				//to get access to the global model
-				this.getView().addDependent(this.pressDialog);
-			}
-
-			this.pressDialog.open();
+			dialog.open();
 		}
 	});
 
