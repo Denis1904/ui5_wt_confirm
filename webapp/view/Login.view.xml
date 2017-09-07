@@ -1,23 +1,21 @@
-<mvc:View
-	controllerName="ui5_wt_confirm.controller.Login"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Panel
-		headerText="{i18n>helloPanelTitle}"
-		class="sapUiResponsiveMargin"
-		width="auto">
+<mvc:View controllerName="ui5_wt_confirm.controller.Login" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>helloPanelTitle}">
+		<subHeader>
+			<Toolbar>
+			
+			</Toolbar>
+		</subHeader>
 		<content>
-			<Button
-				text="{i18n>showHelloButtonText}"
-				press="onShowHello"
-				class="myCustomButton"/>
-			<Input
-				value="{/recipient/name}"
-				valueLiveUpdate="true"
-				width="60%"/>
-			<Text
-				text="Hello {/recipient/name}"
-				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+			<Button text="{i18n>showHelloButtonText}" press="onShowHello" class="myCustomButton"/>
+			<Input value="{/recipient/name}" valueLiveUpdate="true" width="60%"/>
+			<Text text="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
 		</content>
-	</Panel>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>showLoginButtonText}" type="Accept" press="onLogin"/>
+				<Button text="{i18n>showExitButtonText}" type="Reject"/>
+			</Toolbar>
+		</footer>
+	</Page>
 </mvc:View>
